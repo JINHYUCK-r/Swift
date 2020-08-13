@@ -115,5 +115,39 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return nil
         
     }
+    
+    
+    //세컨드뷰에서 만들어진 네비게이션 주석처리된것을 가져와서 수정해준다.
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        // 스토리보드를 사용하는 앱에서 네이게이션되기전에 준비해야될것이 있을때 사용. segue.destination을 사용해서 원하는내용을 보내줄수있따.
+        
+        
+        //segue가 여러게 이면 identifier 로 구분해주거나 destination의 타입으로 구분지어줄수도 있따.
+
+        //세그가 하나라서 그냥 이렇게 씀
+        guard let nextViewContorlloer : SecondViewController =
+            segue.destination as? SecondViewController else {
+                return
+        }
+        guard let cell : UITableViewCell = sender as? UITableViewCell else{
+            return
+        }
+        nextViewContorlloer.textToSet = cell.textLabel?.text
+        /* 이렇게 쓰지않고 위에처럼 textToSet을 만들어서 값을 집어넣는 이유는 믿에 textLable은 실행전에 구현이 안되어서 메모리에 없어서
+         값을 집어넣을수 없기때문. 화면에 보여주지않을거면 그냥 넘겨도 됨
+        nextViewContorlloer.textLabel.text = cell.textLabel?.text
+        */
+        
+    }
+    
+    
+    
+    
 }
 
