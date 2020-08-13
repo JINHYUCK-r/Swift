@@ -79,10 +79,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             */
         if indexPath.section<2{
             /*기본으로 사용하는 셀 (커스텀하지않음)*/
+            //dequeu: 큐에 쌓여있던 재샤용 큐를 다시 가져와 사용한다. 화면을 벗어나면 셀을 큐에 넣어두고 화면에 보여질때만 보여줌, 셀을 재사용하지않고 let cell : UITableViewCell =  uiTableViewCell()로 쓰면 메모리의 낭비가 이루어 진다.
             let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifiel, for: indexPath)
             let text : String = indexPath.section == 0 ? korean[indexPath.row]:
             english[indexPath.row]
              cell.textLabel?.text = text
+            
+            //두번째 셀에만 색칠하기
+            if indexPath.row == 1{
+                cell.backgroundColor = UIColor.red
+            }else{  //이걸 쓰지않고 위에만쓰면 재사용할때마다 불러와져서 다른곳까지 빨간색으로 색칠됨
+                cell.backgroundColor = UIColor.white
+            }
+            
             return cell
         }else{
             let cell : CustomTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.customcellIdentifiel, for: indexPath) as! CustomTableViewCell
