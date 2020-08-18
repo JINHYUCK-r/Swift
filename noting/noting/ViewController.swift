@@ -8,40 +8,35 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
-    lazy var imagePicker : UIImagePickerController = {
-        let picker : UIImagePickerController = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        return picker
-    }()
+    @IBOutlet weak var tableViewMain : UITableView!
+    @IBOutlet weak var labelText : UILabel!
     
-    @IBAction func tap(_ sender: UITapGestureRecognizer) {
-        print("print")
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
     
-    @IBOutlet weak var imageview: UIImageView!
-    
-    @IBAction func touchUpselectImagebutton(_sender: UIButton){
-        self.present(self.imagePicker, animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableViewMain.dequeueReusableCell(withIdentifier: "Type1", for: IndexPath) as! Type1
+        
+        cell.textLabel?.text = "\(indexPath.row)"
+        
+        return cell
     }
-    func imagepickercontrollerdidcancel(_picker : UIImagePickerController){
-        self.dismiss(animated: true, completion: nil)
-    }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let originalImage : UIImage =
-            info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            self.imageview.image = originalImage
-        }
-        self.dismiss(animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        //클릭시 구현되는 소스
     }
     
+  
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tableViewMain.delegate = self
+        tableViewMain.dataSource = self
         
     }
 
