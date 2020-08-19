@@ -9,7 +9,9 @@
 import UIKit
 import Photos //import
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate,/*사진을 삭제하기위해선 딜리게이트 메소드가 필요*/PHPhotoLibraryChangeObserver/*라이브러리에 변화가 생기면 감지하겠다*/ {
+    
+    
     
     
     @IBOutlet weak var tableView : UITableView!
@@ -68,6 +70,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         case .restricted:
             print("접근제한")
         }
+        //  포토라이브러리가 변화될때마다 딜리게이트 메소드가 실행
+        PHPhotoLibrary.shared().register(self)
         
     }
     
@@ -87,6 +91,39 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell //셀을 반환
         
         }
+    
+    //테이블 뷰 로우를 편집하게 해줌
+      func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+          return true
+      }
+      //편집을 하려고 할때
+      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+          //편집이 삭제냐
+          if editingStyle == .delete{
+              let asset: PHAsset = self.fetchResult[indexPath.row]
+              
+              PHPhotoLibrary.shared().performChanges({
+                  PHAssetChangeRequest.deleteAssets([asset] as NSArray)
+              }, completionHandler: nil) //딜리트할거야. 삭제창을 띄움
+          }
+      }
+    
+    /*PHPhotoLibraryChangeObserver에 의해 생성. 포토라이브러리가 바뀌면 호출될 메서드*/
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        guard let chahges = changeInstance.changeDetails(for: fetchResult) else {
+            return
+        }
+        //어떤게 바뀌었는지
+        fetchResult = chahges.fetchResultAfterChanges
+        
+        OperationQueue.main.addOperation {
+            self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
+        }//바뀌면 테이블뷰를 다시 불러달라
+    }
+    
+    
+    
+    
     }
 
 
