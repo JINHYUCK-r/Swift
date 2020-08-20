@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C5D426B24EE5DEE004ADB5B /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D426A24EE5DEE004ADB5B /* ImageZoomViewController.swift */; };
 		3CF2483824ED199900A68260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2483724ED199900A68260 /* AppDelegate.swift */; };
 		3CF2483A24ED199900A68260 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2483924ED199900A68260 /* SceneDelegate.swift */; };
 		3CF2483C24ED199900A68260 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2483B24ED199900A68260 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C5D426A24EE5DEE004ADB5B /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
 		3CF2483424ED199900A68260 /* PhotosExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF2483724ED199900A68260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF2483924ED199900A68260 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				3CF2484024ED199B00A68260 /* Assets.xcassets */,
 				3CF2484224ED199B00A68260 /* LaunchScreen.storyboard */,
 				3CF2484524ED199B00A68260 /* Info.plist */,
+				3C5D426A24EE5DEE004ADB5B /* ImageZoomViewController.swift */,
 			);
 			path = PhotosExample;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				3CF2483C24ED199900A68260 /* ViewController.swift in Sources */,
 				3CF2483824ED199900A68260 /* AppDelegate.swift in Sources */,
 				3CF2483A24ED199900A68260 /* SceneDelegate.swift in Sources */,
+				3C5D426B24EE5DEE004ADB5B /* ImageZoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

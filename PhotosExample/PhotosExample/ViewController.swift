@@ -121,7 +121,19 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         }//바뀌면 테이블뷰를 다시 불러달라
     }
     
-    
+    //네이게이션 컨트롤러가 동작하기전에 호출. 데이터를 전달해준다음에 다음화면에 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController: ImageZoomViewController = segue.destination as? ImageZoomViewController else {
+            return
+        }
+        guard let cell: UITableViewCell = sender as? UITableViewCell else {
+            return
+        }
+        guard let index:IndexPath = self.tableView.indexPath(for: cell) else {
+            return
+        }
+        nextViewController.aseet = self.fetchResult[index.row]
+    }
     
     
     }
