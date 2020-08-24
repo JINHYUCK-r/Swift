@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UICollectionViewDataSource {
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     var numberOfCell : Int = 10
     let cellIdentifier : String = "cell"
@@ -23,7 +23,12 @@ class ViewController: UIViewController,UICollectionViewDataSource {
         return cell
     }
     
-    
+    //컬렉션뷰의 아이템(셀)을 선택하면 셀의 갯수를 하나씩늘려주는
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //컬렉션뷰는 테이블뷰와 비슷하지만 테이블뷰에서는 indexPath.row 했던것을 indexPath.item 으로 사용하는것이 좀 다름
+        self.numberOfCell += 1
+        collectionView.reloadData()
+    }
     
 
     override func viewDidLoad() {
