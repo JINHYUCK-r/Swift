@@ -19,6 +19,11 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     let imageManager : PHCachingImageManager = PHCachingImageManager() //가져온 에셋을 가지고 이미지 로드
     let cellIdentifier : String = "cell"
     
+    @IBAction func touchUpRefreshButton(_sender: UIBarButtonItem){
+        self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
+    }
+    
+    
     func requestConllection(){
         //카메라롤 콜렉션을 가져옴
         let cameraRoll : PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
