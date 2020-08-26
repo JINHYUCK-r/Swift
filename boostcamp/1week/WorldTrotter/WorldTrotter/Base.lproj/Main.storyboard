@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wPN-To-Ggf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,6 +71,7 @@
                             <outletCollection property="gestureRecognizers" destination="23r-qT-bXM" appends="YES" id="flu-IQ-eF6"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Convert" image="sun.max" catalog="system" id="HXV-pr-QYj"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="1Uu-wU-ijJ" id="ji7-XT-WK2"/>
                         <outlet property="textField" destination="9LE-Ls-YJr" id="ba1-In-Fmi"/>
@@ -85,5 +86,54 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vbT-s7-UmG">
+            <objects>
+                <tabBarController id="wPN-To-Ggf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Gd-ME-wmB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="HR5-gq-I9K"/>
+                        <segue destination="jrZ-uD-eSP" kind="relationship" relationship="viewControllers" id="USK-mT-dQ3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLf-t9-flA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="117"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Pej-AT-hNd">
+            <objects>
+                <viewController restorationIdentifier="Map" storyboardIdentifier="Map" id="jrZ-uD-eSP" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="Map" id="hh2-fO-vxU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L4q-C2-lSG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="L4q-C2-lSG" firstAttribute="leading" secondItem="cxV-en-g0A" secondAttribute="leading" id="4jo-6e-YXu"/>
+                            <constraint firstItem="cxV-en-g0A" firstAttribute="trailing" secondItem="L4q-C2-lSG" secondAttribute="trailing" id="DY5-EX-v1G"/>
+                            <constraint firstItem="cxV-en-g0A" firstAttribute="bottom" secondItem="L4q-C2-lSG" secondAttribute="bottom" id="eVP-ey-bYE"/>
+                            <constraint firstItem="L4q-C2-lSG" firstAttribute="top" secondItem="cxV-en-g0A" secondAttribute="top" id="rH2-iR-eMc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cxV-en-g0A"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="ndu-O4-W36"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="br3-DS-8pn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776" y="122"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="sun.max" catalog="system" width="128" height="124"/>
+    </resources>
 </document>

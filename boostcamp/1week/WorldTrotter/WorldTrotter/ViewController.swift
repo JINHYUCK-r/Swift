@@ -18,6 +18,27 @@ class ViewController: UIViewController,UITextFieldDelegate {
           }
       }
     
+   override func viewDidLoad() {
+            super.viewDidLoad()
+            print("controllerView loaded its view")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let view = self.view
+        var currentTime = String()
+        let nowDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        dateFormatter.locale = Locale(identifier: "ko_Kr")
+        currentTime = dateFormatter.string(from: nowDate)
+        
+        if(Int(currentTime)!<6) || (Int(currentTime)!>18){
+            view?.backgroundColor = UIColor.darkGray
+        }else{
+            view?.backgroundColor = UIColor.cyan
+        }
+    
+    }
+    
     var celsiusValue : Double?{
         if let value = fahrenheitValue{
             return (value-32)*(5/9)
@@ -56,6 +77,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
    //textField 입력 값의 범위를 소수 첫째 자리만 받음
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+        
+        //알파벳 문자 입력 받지 않게 하기
         let replacementTextHasDecimalSeparator = string.range(of: ".")
         let hasAlphabet = string.rangeOfCharacter(from: NSCharacterSet.letters) // 알파벳을 가지고 있으면 거기에 맞는 range 반환.
         
