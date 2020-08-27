@@ -70,6 +70,7 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
         zoom.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
     }
+    //핀추가 구현해야함
     
     
     override func viewDidLoad() {
@@ -132,9 +133,24 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
             MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         mapView.setRegion(region, animated: true)
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
         
+       let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        
+        mapView.setRegion(region, animated: true)
+        print(location)
+        
+        let currentAnnotation = MKPointAnnotation()
+        currentAnnotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        currentAnnotation.title = "현재있는곳"
+        mapView.addAnnotation(currentAnnotation)
+        print(mapView.annotations)
         
         
     }
+    //함수두개구현해야함
 
 }
