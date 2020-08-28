@@ -69,8 +69,36 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
         zoom.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         zoom.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
+        //핀 추가
+        let aAnnotation = MKPointAnnotation()
+        aAnnotation.coordinate = CLLocationCoordinate2D(latitude: 36.10, longitude: 128.38)
+        aAnnotation.title = "장소A"
+        
+        let bAnnotation = MKPointAnnotation()
+        bAnnotation.coordinate = CLLocationCoordinate2D(latitude: 37.79, longitude: 127.56)
+        bAnnotation.title = "장소B"
+        
+        mapView.addAnnotation(aAnnotation)
+        print(mapView.annotations)
+        mapView.addAnnotation(bAnnotation)
+        print(mapView.annotations)
+        
+        //버튼을 누르면 지정해놓은 핀을 크게보여줌
+        rotatePin = UIButton()
+        rotatePin.setTitle("핀 순회", for: .normal)
+        rotatePin.setTitleColor(UIColor.green, for: .normal)
+        rotatePin.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(rotatePin)
+        
+        rotatePin.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        rotatePin.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        rotatePin.addTarget(self, action: #selector(rotatePinFunc), for: .touchUpInside)
+        
+        
     }
-    //핀추가 구현해야함
+    
     
     
     override func viewDidLoad() {
@@ -151,6 +179,13 @@ class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDel
         
         
     }
-    //함수두개구현해야함
-
+    var index = 0
+    @objc func rotatePinFunc(){
+        mapView.selectAnnotation(self.mapView.annotations[index], animated: true)
+        print(mapView.annotations)
+        index = (index+1) % mapView.annotations.count
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
+    }
 }
