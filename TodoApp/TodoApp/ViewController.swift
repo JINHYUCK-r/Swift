@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController,UITableViewDataSource {
+    
+    //ref 는 내 firebase데이터베이스의 주소가 저장될 변수
+    var ref : DatabaseReference!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,6 +39,16 @@ class ViewController: UIViewController,UITableViewDataSource {
             if let newTodo = dialog.textFields?[0].text {
                 self.todos.append(newTodo)
                 self.tableView.reloadData()
+                
+                //ref에 내 firebase 주소를 넣어줌
+                self.ref = Database.database().reference()
+                //itemRef는 위 데이터베이스의 위치(ref)의 child라고 하네요.
+                //child는 지정된 상대 경로에있는 위치의 주소를 가져오는 프로퍼티
+                //list라는 이름으로 밑에 데이터들이 저장됨
+                //"list/firebaseTest/zedd"이런식으로 하위경로도 설정가능
+                let itemRef = self.ref.child("list")
+                //데이터 베이스에 값을 넣음
+                itemRef.setValue(self.todos)
             }
             
         }
@@ -43,6 +57,7 @@ class ViewController: UIViewController,UITableViewDataSource {
         dialog.addAction(okAction)
         dialog.addAction(cancelAntion)
         self.show(dialog,sender: nil)
+
     }
     
     
