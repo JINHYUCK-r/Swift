@@ -1,7 +1,7 @@
 # Swift공부
 
-**MusicPlayer**(#MusicPlayer)
- - swift 사용하기
+**MusicPlayer** (# MusicPlayer)
+ - swift 사용하기 
  - Asset 추가하기
  - 스토리보드 사용
  - 코드 및 구조 읽기 
