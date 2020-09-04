@@ -63,7 +63,7 @@
  - 현재위치/ 확대버튼
  - 핀 추가/ 버튼클릭시 핀을 하나씩 보여주기 구현
  
-[**ToDoApp**](https://github.com/JINHYUCK-r/Swift/tree/master/ToDoApp)
+[**TodoApp**](https://github.com/JINHYUCK-r/Swift/tree/master/TodoApp)
  - 코코아팟 사용
  - 테이블뷰를 구성
  - 버튼을 클릭하여 새 내용입력
