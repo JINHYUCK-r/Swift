@@ -1,6 +1,6 @@
 # Swift공부
 
-**MusicPlayer** (# MusicPlayer)
+**[MusicPlayer]** (# MusicPlayer)
  - swift 사용하기 
  - Asset 추가하기
  - 스토리보드 사용
