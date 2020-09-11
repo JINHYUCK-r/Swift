@@ -80,6 +80,16 @@
  [**InfiniteScrollingExample**](https://github.com/JINHYUCK-r/Swift/tree/master/InfiniteScrollingExample)
   - 무한스크롤 구현
   - 데이터 리로드 시 로딩아이콘
+  
+  [**Alert**](https://github.com/JINHYUCK-r/Swift/tree/master/Alert)
+   - Alert 만들기
+   - alert와 actionSheet 만들기
+   - alrert 텍스트 입력받고 불러오기
+   
+   [**Netsorking**](https://github.com/JINHYUCK-r/Swift/tree/master/Networking)
+   - API 데이터 불러오기
+   - JSON 디코딩
+   - session, datatask, resume 사용
  
 **plactice**   
 **nothing**
