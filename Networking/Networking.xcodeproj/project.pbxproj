@@ -14,6 +14,7 @@
 		3C1A2561250B86FD005049B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C1A2560250B86FD005049B9 /* Assets.xcassets */; };
 		3C1A2564250B86FD005049B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C1A2562250B86FD005049B9 /* LaunchScreen.storyboard */; };
 		3C1A256C250B8885005049B9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A256B250B8885005049B9 /* Model.swift */; };
+		3C3BB605250F5160007986D7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3BB604250F5160007986D7 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3C1A2563250B86FD005049B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C1A2565250B86FD005049B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C1A256B250B8885005049B9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3C3BB604250F5160007986D7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3C1A2557250B86FD005049B9 /* AppDelegate.swift */,
 				3C1A2559250B86FD005049B9 /* SceneDelegate.swift */,
 				3C1A255B250B86FD005049B9 /* ViewController.swift */,
+				3C3BB604250F5160007986D7 /* Request.swift */,
 				3C1A255D250B86FD005049B9 /* Main.storyboard */,
 				3C1A256B250B8885005049B9 /* Model.swift */,
 				3C1A2560250B86FD005049B9 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			files = (
 				3C1A255C250B86FD005049B9 /* ViewController.swift in Sources */,
 				3C1A2558250B86FD005049B9 /* AppDelegate.swift in Sources */,
+				3C3BB605250F5160007986D7 /* Request.swift in Sources */,
 				3C1A255A250B86FD005049B9 /* SceneDelegate.swift in Sources */,
 				3C1A256C250B8885005049B9 /* Model.swift in Sources */,
 			);
