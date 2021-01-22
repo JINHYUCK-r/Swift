@@ -93,12 +93,12 @@
    
     
    [**CustomCode**](https://github.com/JINHYUCK-r/Swift/tree/master/CustomCode)
-      - StoryBoard 없이 코드로 화면구현
-      - 화면이동 및 데이터 이동
+   - StoryBoard 없이 코드로 화면구현
+    - 화면이동 및 데이터 이동
 
    [**CustomCode2**](https://github.com/JINHYUCK-r/Swift/tree/master/CustomCode2)
-      - 코드를 이용하여 탭바컨트롤러 구현
-      - 커스텀마이징을 통한 탭바컨트롤러 구현
+   - 코드를 이용하여 탭바컨트롤러 구현
+    - 커스텀마이징을 통한 탭바컨트롤러 구현
 
  
 **plactice**   
