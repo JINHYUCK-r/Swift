@@ -18,7 +18,7 @@ class CSTapBarController : UITabBarController{
     override func viewDidLoad() {
         //초기화면은 첫번째
         self.onTabBarIem(self.tabItem01)
-        //기본탭바를 보이지않게하기 
+        //기본탭바를 보이지않게하기
         self.tabBar.isHidden = true
         
         let width = self.view.frame.width
