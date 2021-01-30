@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C8A398625C5320E00E7FE56 /* CSTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A398525C5320E00E7FE56 /* CSTapBarController.swift */; };
 		3CFB05A225C3C71100A98264 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB05A125C3C71100A98264 /* AppDelegate.swift */; };
 		3CFB05A425C3C71100A98264 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB05A325C3C71100A98264 /* SceneDelegate.swift */; };
 		3CFB05A625C3C71100A98264 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB05A525C3C71100A98264 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C8A398525C5320E00E7FE56 /* CSTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTapBarController.swift; sourceTree = "<group>"; };
 		3CFB059E25C3C71100A98264 /* CustomCode5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCode5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFB05A125C3C71100A98264 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CFB05A325C3C71100A98264 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				3CFB05A325C3C71100A98264 /* SceneDelegate.swift */,
 				3CFB05A525C3C71100A98264 /* ViewController.swift */,
 				3CFB05B825C3C73200A98264 /* CSButton.swift */,
+				3C8A398525C5320E00E7FE56 /* CSTapBarController.swift */,
 				3CFB05A725C3C71100A98264 /* Main.storyboard */,
 				3CFB05AD25C3C71200A98264 /* Assets.xcassets */,
 				3CFB05AF25C3C71200A98264 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CFB05A625C3C71100A98264 /* ViewController.swift in Sources */,
+				3C8A398625C5320E00E7FE56 /* CSTapBarController.swift in Sources */,
 				3CFB05B925C3C73200A98264 /* CSButton.swift in Sources */,
 				3CFB05A225C3C71100A98264 /* AppDelegate.swift in Sources */,
 				3CFB05A425C3C71100A98264 /* SceneDelegate.swift in Sources */,
