@@ -1,0 +1,6 @@
+framework module Pods_ExpandableTable {
+  umbrella header "Pods-ExpandableTable-umbrella.h"
+
+  export *
+  module * { export * }
+}
